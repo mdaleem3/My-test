@@ -32,8 +32,11 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          image: mohammedaleem001/mytest
+
+     - name: Build and push
+      uses: mr-smithers-excellent/docker-build-push@v6
+      with:
+        image: mohammedaleem001/mytest
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-          echo test, and deploy your project.
